@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>Registeration - Portal </h1>
+<div mat-dialog-content>
+<form [formGroup]="registerForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+  <input formControlName="name" matInput placeholder="Enter the name"/>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+  <input formControlName="email" type="email" matInput placeholder="Enter the Email Id"/>
+  </mat-form-field>  
+  <mat-form-field appearance="outline">
+    <mat-label>Choose DOB</mat-label>
+    <input formControlName="dob" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+  <input formControlName="address" type="text" matInput placeholder="Enter the Address"/>
+  </mat-form-field>  
+  <mat-form-field appearance="outline">
+    <mat-label>PAN</mat-label>
+  <input formControlName="pan" type="text" matInput placeholder="Enter the PAN"/>
+  </mat-form-field>  
+  <mat-form-field appearance="outline">
+    <mat-label>Contact Number</mat-label>
+  <input formControlName="contact" type="number" matInput placeholder="Enter the Contact">
+  </mat-form-field>  
+  <mat-form-field appearance="outline">
+    <mat-label>Country</mat-label>
+   <mat-select formControlName="country" placeholder="Select the Country">
+    <mat-option value="1">India</mat-option>
+    <mat-option value="2">Japan</mat-option>
+    <mat-option value="3">China</mat-option>
+  </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>State</mat-label>
+   <mat-select formControlName="state"  placeholder="Select the Country">
+    <mat-option value="11">Tamil Nadu</mat-option>
+    <mat-option value="22">Kerala </mat-option>
+    <mat-option value="33">Delhi</mat-option>
+  </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Dependency Name1</mat-label>
+  <input formControlName="DependName1" matInput placeholder="Enter the name"/>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Choose DOB</mat-label>
+    <input formControlName="DependDOB1" matInput [matDatepicker]="picker1">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Dependency Name2</mat-label>
+  <input formControlName="DependName2" matInput placeholder="Enter the name"/>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Choose DOB</mat-label>
+    <input formControlName="DependDOB2" matInput [matDatepicker]="picker2">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+</form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="registeration()">{{actionBtn}}</button>
+</div>

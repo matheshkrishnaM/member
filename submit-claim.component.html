@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Registeration - Portal </h1>
+<div mat-dialog-content>
+<form [formGroup]="submitForm">
+    <mat-form-field appearance="outline">
+        <mat-label>name</mat-label>
+    <mat-select formControlName="submitName"  placeholder="Select the member">
+        <mat-option  *ngIf="regs.id" [value]="regs">{{regs.name}}</mat-option>
+        <mat-option *ngIf="regs.id" [value]="regs">{{regs.DependName1}}</mat-option>
+        <mat-option *ngIf="regs.id" [value]="regs">{{regs.DependName2}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>DOB</mat-label>
+    <mat-select formControlName="submitDOB" placeholder="Select the member">
+        <mat-option *ngIf="regs.id" [value]="regs">{{regs.dob | date}}</mat-option>
+        <mat-option *ngIf="regs.id" [value]="regs">{{regs.DependDOB1 | date}}</mat-option>
+        <mat-option *ngIf="regs.id" [value]="regs">{{regs.DependDOB2 | date}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Date of Admission</mat-label>
+    <input formControlName="dateOfAdmission" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Date of Discharge</mat-label>
+    <input formControlName="dateOfDischarge" matInput [matDatepicker]="picker1">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Total Bill Amount</mat-label>
+  <input formControlName="Amount" type="number" matInput placeholder="Enter the Total Amount">
+  </mat-form-field>  
+
+</form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" >actionBtn</button>
+</div>
